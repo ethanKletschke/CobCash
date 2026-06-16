@@ -1,6 +1,6 @@
 # CobCash – Support
 
-This document explains what kind of support is available for CobCash, 
+This document explains what kind of support is available for CobCash,
 how to report issues, and what limitations you should be aware of when using the
 program.
 
@@ -16,7 +16,7 @@ program.
 
 ## Terminal Screen and User Input Issues
 
-CobCash makes use of GnuCOBOL’s SCREEN section to provide a more interactive 
+CobCash makes use of GnuCOBOL’s SCREEN section to provide a more interactive
 terminal interface. Unfortunately, GnuCOBOL’s implementation of this part of the
 COBOL standard can be quirky and inconsistent, depending on:
 
@@ -24,7 +24,7 @@ COBOL standard can be quirky and inconsistent, depending on:
 - Your operating system
 - The specific GnuCOBOL version you are using
 
-Some visual glitches, input oddities, or screen refresh issues are therefore 
+Some visual glitches, input oddities, or screen refresh issues are therefore
 outside the control of this project and cannot be fixed in CobCash itself.
 
 If you encounter a screen-related issue:
@@ -37,14 +37,14 @@ limitation or a genuine bug.
 
 ## Missing DLLs (Windows)
 
-If the program fails to start due to missing DLLs on Windows: 
+If the program fails to start due to missing DLLs on Windows:
 Open a GitHub issue that includes:
 
 - The exact error message
 - Your Windows version
 - Where you downloaded the release from
 
-Any confirmed missing DLLs will be bundled into a future release as soon as 
+Any confirmed missing DLLs will be bundled into a future release as soon as
 possible.
 
 ## General Bugs and Unexpected Behaviour
@@ -64,7 +64,7 @@ Clear reports make it much easier to investigate and fix problems.
 ## Final Notes
 
 CobCash is a learning-focused project built with GnuCOBOL, and some rough edges
-are unavoidable. Bug reports, feedback, and suggestions are always welcome and 
+are unavoidable. Bug reports, feedback, and suggestions are always welcome and
 appreciated.
 
 Thanks for using CobCash!

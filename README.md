@@ -19,7 +19,10 @@ A fixed-format COBOL app that imitates a transaction at a cashier till.
     - [About This Project](#about-this-project)
     - [Known Limitations and Bugs](#known-limitations-and-bugs)
   - [Features of This Project](#features-of-this-project)
-  - [Running the App](#running-the-app)
+  - [Running CobCash](#running-cobcash)
+    - [Via the GitHub Release](#via-the-github-release)
+    - [Compiling from Source](#compiling-from-source)
+    - [Notes](#notes)
 
 ---
 
@@ -89,12 +92,16 @@ This is done by:
 For Linux users, run the following in the project root folder:
 
 ```bash
-cobc -I ./src -x ./src/**.cbl -o ./bin/CobCash  -w -q
+cobc -I ./src -x ./src/main.cbl ./src/**.cbl -o ./bin/CobCash  -w -q
 ./bin/CobCash
 ```
 
-**NOTE**: The app has NOT been tested on Linux. Proceed with caution and make
-a GitHub issue for me to fix whatever the problem is.
+**NOTE**: The app has been tested on Linux and works correctly. Just ensure that
+you install GnuCOBOL with the following command before running the app:
+
+```bash
+sudo apt install gnucobol3
+```
 
 ### Notes
 
@@ -107,8 +114,9 @@ program starts and reports missing DLLs, **please** open a GitHub issue and
 include screenshots of the error messages — especially the names of any missing
 DLLs — so they can be added.
 
-You can build the application from source, but on Windows this is not recommended
-unless you already have a working GnuCOBOL + MinGW setup. Configuring the toolchain
+You can build the application from source on Linux or Windows, but this is not
+recommended on Windows systems unless you already have a working GnuCOBOL +
+MinGW setup. Configuring the toolchain
 and collecting all required runtime DLLs can be difficult and error-prone.
 
 For this reason, a pre-built GnuCOBOL distribution (such as

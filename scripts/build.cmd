@@ -5,8 +5,6 @@
 cobc -I ../src ^
   -x ../src/main.cbl ^
   -o ../bin/CobCash ^
-  -Wall ^
-  -Wextra ^
-  -Wno-terminator
+  -w -q
 
 @REM Note: Run from the "scripts" folder
