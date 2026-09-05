@@ -4,7 +4,7 @@
 project-meta:
   project-name: CobCash
   date-started: 2026-01-25
-  last-updated: 2026-09-03
+  last-updated: 2026-09-05
   languages:
     - COBOL (GnuCOBOL)
   status: Stable
@@ -13,9 +13,12 @@ project-meta:
 
 build:
   dev-environments:
-    - Windows 11
+    - Windows 11 (Initially)
+    - Linux (WSL2)
   test-environments:
     - Windows 11
+    - Linux (WSL2)
+    - Debian (Via Docker)
   target-platforms:
     - Windows 11
   compiler:

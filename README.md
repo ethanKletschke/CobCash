@@ -20,8 +20,9 @@ A fixed-format COBOL app that imitates a transaction at a cashier till.
     - [Known Limitations and Bugs](#known-limitations-and-bugs)
   - [Features of This Project](#features-of-this-project)
   - [Running CobCash](#running-cobcash)
-    - [Via the GitHub Release](#via-the-github-release)
+    - [Via the Latest GitHub Release](#via-the-latest-github-release)
     - [Compiling from Source](#compiling-from-source)
+    - [Through a Docker Image](#through-a-docker-image)
     - [Notes](#notes)
 
 ---
@@ -69,10 +70,11 @@ then generates a receipt in the form of a text file (`Receipt.txt`).
 - Comprehensive data structures in the `DATA` division
 - Generating a text file receipt with COBOL's Report Writer Control System
   (RWCS)
+- Verified to work across Linux, Windows, and through Docker's CLI
 
 ## Running CobCash
 
-### Via the GitHub Release
+### Via the Latest GitHub Release
 
 To run the app, unzip the `.zip` that will be provided in the latest
 release of this repository, and run the `.exe`.
@@ -92,7 +94,9 @@ This is done by:
 For Linux users, run the following in the project root folder:
 
 ```bash
-cobc -I ./src -x ./src/main.cbl ./src/**.cbl -o ./bin/CobCash  -w -q
+# In case "bin" doesn't exist
+mkdir bin
+cobc -I ./src -x ./src/main.cbl ./src/**.cbl -o ./bin/CobCash -w -q
 ./bin/CobCash
 ```
 
@@ -102,6 +106,25 @@ you install GnuCOBOL with the following command before running the app:
 ```bash
 sudo apt install gnucobol3
 ```
+
+### Through a Docker Image
+
+To build the Docker image via the repository's `Dockerfile`, run the following
+commands in the root folder of the project:
+
+```bash
+docker build -t cobcash .
+```
+
+Then to run it:
+
+```bash
+docker run --rm -it cobcash:latest
+```
+
+Note: Running the image directly through Docker Desktop's container UI will not
+work, as the application requires an interactive TTY terminal. Run the container
+from the terminal as described above.
 
 ### Notes
 
@@ -116,10 +139,10 @@ DLLs — so they can be added.
 
 You can build the application from source on Linux or Windows, but this is not
 recommended on Windows systems unless you already have a working GnuCOBOL +
-MinGW setup. Configuring the toolchain
-and collecting all required runtime DLLs can be difficult and error-prone.
+MinGW setup. Configuring the toolchain and collecting all required runtime DLLs
+can be difficult and error-prone.
 
-For this reason, a pre-built GnuCOBOL distribution (such as
+For this reason, a pre-built GnuCOBOL distribution (specifically one of
 [Arnold Trembley's amazing binaries](https://www.arnoldtrembley.com/GnuCOBOL.htm))
 was used to build the provided binaries, and the release ZIP includes the DLLs
 needed to run the program on Windows.
