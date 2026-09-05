@@ -6,7 +6,7 @@ A fixed-format COBOL app that imitates a transaction at a cashier till.
 
 - Author: Ethan Kletschke
 - Version: `1.1.0`
-- Developed and Tested On: Windows 11
+- Developed and Tested On: Windows 11 and Linux
 - Targeted Platform: Windows 10 and above
 - License: MIT
 - Project Metadata File: [`project.yaml`](./meta/project.yaml)
